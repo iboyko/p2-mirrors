@@ -12,13 +12,32 @@
 					<groupId>org.eclipse.tycho.extras</groupId>
 					<artifactId>tycho-p2-extras-plugin</artifactId>
 					<version>0.14.0</version>
+					<configuration>
+						<destination>${project.build.directory}/${artifactId}/repository</destination>
+						<!-- whether to append to the target repository content -->
+						<append>true</append>
+						<!-- include the latest version of each IU -->
+						<latestVersionOnly>true</latestVersionOnly>
+						<!-- whether to compress the content.xml/artifacts.xml -->
+						<compress>true</compress>
+						<!-- don't mirror artifacts, only metadata -->
+						<mirrorMetadataOnly>false</mirrorMetadataOnly>
+						<!-- Whether only strict dependencies should be followed. -->
+						<!-- "strict" means perfect version match -->
+						<followStrictOnly>false</followStrictOnly>
+						<!-- Whether or not to follow optional requirements. -->
+						<includeOptional>true</includeOptional>
+						<!-- Whether or not to follow non-greedy requirements. -->
+						<includeNonGreedy>true</includeNonGreedy>
+					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
 	<modules>
-		<module>p2-morrors-indigo</module>
+		<module>p2-mirrors-indigo</module>
 		<module>p2-mirrors-orbit</module>
 		<module>p2-mirrors-guava</module>
+		<module>p2-mirrors-babel</module>
 	</modules>
 </project>
