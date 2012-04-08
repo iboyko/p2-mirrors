@@ -19,5 +19,6 @@
 	<modules>
 		<module>p2-morrors-indigo</module>
 		<module>p2-mirrors-orbit</module>
+		<module>p2-mirrors-guava</module>
 	</modules>
 </project>
