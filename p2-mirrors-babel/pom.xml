@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>p2-mirrors</artifactId>
+		<groupId>com.itrioplus</groupId>
+		<version>0.1.0-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+	<artifactId>p2-mirrors-babel</artifactId>
+	<packaging>pom</packaging>
+	<name>p2-mirrors :: Eclipse Babel </name>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho.extras</groupId>
+				<artifactId>tycho-p2-extras-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>mirror-indigo</id>
+						<goals>
+							<goal>mirror</goal>
+						</goals>
+						<phase>generate-sources</phase>
+					</execution>
+				</executions>
+				<configuration>
+					<source>
+						<!-- source repositories to mirror from -->
+						<repository>
+							<url>http://download.eclipse.org/technology/babel/update-site/R0.9.1/indigo</url>
+							<layout>p2</layout>
+						</repository>
+					</source>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
